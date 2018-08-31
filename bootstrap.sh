@@ -1,10 +1,10 @@
 #!/bin/bash
 
 apt-get install -y nginx
-apt install -y curl
+apt-get install -y curl
 
 sudo curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
-sudo apt install -y nodejs
+sudo apt-get install -y nodejs
 
 sudo echo "server {
         listen 80;
@@ -16,7 +16,7 @@ sudo echo "server {
           proxy_set_header Host $host;
           proxy_cache_bypass $http_upgrade;
         }
-      }" | sudo tee -a /etc/nginx/sites-available/default
+      }" > /etc/nginx/sites-available/default
 
 sudo chown www-data:www-data /etc/nginx/sites-available/default
 
@@ -28,12 +28,12 @@ sudo echo "var express = require('express')
       })
       app.listen(3000, function () {
         console.log('Hello world app listening on port 3000!')
-      })" | sudo tee -a /home/azureuser/myapp/index.js
+      })" > /home/jae/myapp/index.js
 
-sudo chown azureuser:azureuser /home/azureuser/myapp/index.js
+sudo chown jae:jae /home/jae/myapp/index.js
 
 sudo service nginx restart
-cd "/home/azureuser/myapp"
+cd "/home/jae/myapp"
 sudo npm init
 sudo npm install express -y
 sudo nodejs index.js
