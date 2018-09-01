@@ -34,7 +34,7 @@ sudo echo "server {
 sudo systemctl reload nginx
 
 echo "<?php
-$con=mysqli_connect("localhost:3306","root","root",
+$con=mysqli_connect("10.0.2.254:3306","root","root",
 "db");
 
 // Check connection
