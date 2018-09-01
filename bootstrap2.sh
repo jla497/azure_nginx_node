@@ -34,5 +34,5 @@ sudo echo "server {
 sudo systemctl reload nginx
 
 echo "<?php
-phpinfo();
+    phpinfo();
 ?>" > /var/www/html/index.php
