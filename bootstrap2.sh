@@ -34,15 +34,5 @@ sudo echo "server {
 sudo systemctl reload nginx
 
 echo "<?php
-$con=mysqli_connect("10.0.2.254:3306","root","root",
-"db");
-
-// Check connection
-if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-else
-{
-    echo "Connection with MySQL database was successful";
-}
+phpinfo();
 ?>" > /var/www/html/index.php
